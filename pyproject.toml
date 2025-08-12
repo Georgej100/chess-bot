@@ -1,7 +1,7 @@
 [project]
 name = "chess-bot"
 version = "0.1.0"
-description = "Add your description here"
+description = "A short and simple chess bot in python using the python-chess library"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
