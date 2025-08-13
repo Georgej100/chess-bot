@@ -9,6 +9,12 @@ piece_values = {
 }
 
 def evaluate(board: chess.Board) -> float:
+    move = board.pop()
+    board.push(move)
+
+    print(move)
+
+
     evaluation: float = 0.00
 
     if board.is_checkmate():
