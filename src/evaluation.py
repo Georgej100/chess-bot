@@ -1,4 +1,5 @@
 import chess
+import random
 
 piece_values = {
     chess.PAWN: 1,
@@ -9,19 +10,15 @@ piece_values = {
 }
 
 def evaluate(board: chess.Board) -> float:
-    move = board.pop()
-    board.push(move)
-
-    print(move)
-
-
     evaluation: float = 0.00
 
     if board.is_checkmate():
-        return -2000
+        return -20000
     if board.is_check():
         evaluation -= 10
-
+    
+    evaluation += count_matieral_difference(board)
+    
     return evaluation
 
 def count_matieral_difference(board: chess.Board) -> int:

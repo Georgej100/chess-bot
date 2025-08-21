@@ -1,10 +1,10 @@
 import chess
-import src.search as search
-
+import src.bot as bot
 
 def main():
     print("Chess Bot V1.0")
     board = chess.Board()
+    chess_bot = bot.Bot(6, "data/polyglot/codekiddy.bin")
 
     print(board)
     
@@ -12,7 +12,7 @@ def main():
         if board.turn == chess.WHITE:
             user_play(board)
         else:
-            board.push(search.think(board, 3))
+            board.push(chess_bot.think(board, 4))
         print(f"{board}\n")
 
 
